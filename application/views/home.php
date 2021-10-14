@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url(VENDOR); ?>/bootstrap/scss/bootstrap.scss" rel="stylesheet" />
     <link href="<?php echo base_url(VENDOR); ?>/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <link href="<?php echo base_url(VENDOR); ?>/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="<?php echo base_url(CSS); ?>/styles.css" rel="stylesheet" />
     <script src="<?php echo base_url() ?>/assets/js/jquerymain.js"></script>
     <title>Document</title>
@@ -24,7 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <a class="nav-link 
+                            dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
@@ -176,6 +178,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Footer-->
         <!-- <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
-        </footer>    -->
+        </footer> -->
         <script src="js/scripts.js"></script>
 </html>
