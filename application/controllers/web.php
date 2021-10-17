@@ -18,27 +18,29 @@ class Web extends CI_Controller
 	public function customer_login()
 	{
 		// $this->load->view('welcome_message');
-		// $this->load->view('/template/header');
-		// $this->load->view('/template/navbar');
-		$this->load->view('home');
-		// $this->load->view('/template/footer');
+		// $this->load->view('/template/web-header');
+		$this->load->view('/template/header');
+		$this->load->view('/template/navbar');
+		$this->load->view('web/customer_login');
+		$this->load->view('/template/footer');
+		// $this->load->view('/template/web-footer');
 	}
     
 	public function customer_register()
 	{
 		// $this->load->view('welcome_message');
-		// $this->load->view('/template/header');
+		// $this->load->view('/template/web-header');
 		// $this->load->view('/template/navbar');
 		$this->load->view('home');
-		// $this->load->view('/template/footer');
+		// $this->load->view('/template/web-footer');
 	}
 
     public function user_form()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/template/web-header');
         $this->load->view('web/pages/user_form');
-        $this->load->view('web/inc/footer');
+        $this->load->view('web/template/web-footer');
     }
 
     public function customer_save()
@@ -106,17 +108,17 @@ class Web extends CI_Controller
     public function contact()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/template/web-header');
         $this->load->view('web/pages/contact');
-        $this->load->view('web/inc/footer');
+        $this->load->view('web/template/web-footer');
     }
 
     public function cart()
     {
         $data                  = array();
         $data['cart_contents'] = $this->cart->contents();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/template/web-header');
         $this->load->view('web/pages/cart', $data);
-        $this->load->view('web/inc/footer');
+        $this->load->view('web/template/web-footer');
     }
 }
