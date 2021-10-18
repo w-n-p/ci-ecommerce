@@ -8,10 +8,38 @@ class Web extends CI_Controller
     }
 	public function index()
 	{
+        $this->load->library('pagination');
+
+        $config['base_url'] = base_url('web/product');
+        $config['total_rows'] = $this->db->get('tbl_product')->num_rows();
+        $config['per_page'] = 6;
+        $config['num_links'] = 10;
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['prev_link'] = '&lt; Previous';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['last_link'] = false;
+        $config['next_link'] = 'Next &gt;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a>';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $this->pagination->initialize($config);
+
+        $data                    = array();
+        $data['get_all_product'] = $this->web_model->get_all_product_pagi($config['per_page'], $this->uri->segment('3'));
+        $data['pagination'] = $this->pagination->create_links();
+        
 		// $this->load->view('welcome_message');
 		$this->load->view('/template/header');
 		$this->load->view('/template/navbar');
-		$this->load->view('home');
+		$this->load->view('web/all',$data);
 		$this->load->view('/template/footer');
 	}
     
