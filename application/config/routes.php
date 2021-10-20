@@ -67,6 +67,7 @@ $route['order/details/(:num)'] = 'manageorder/order_details/$1';
 
 //Web Route
 $route['product']             = 'web';
+$route['product/all']         = 'web/product';
 $route['single/(:num)']       = 'web/single/$1';
 $route['contact']             = 'web/contact';
 $route['cart']                = 'web/cart';

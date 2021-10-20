@@ -8,9 +8,22 @@ class Web extends CI_Controller
     }
 	public function index()
 	{
+        $data                          = array();
+        $data['all_featured_products'] = $this->web_model->get_all_featured_product();
+        $data['all_new_products']      = $this->web_model->get_all_new_product();
+
+		// $this->load->view('welcome_message');
+		$this->load->view('/template/header');
+		$this->load->view('/template/navbar');
+		$this->load->view('web/home',$data);
+		$this->load->view('/template/footer');
+	}
+
+    public function product()
+    {
         $this->load->library('pagination');
 
-        $config['base_url'] = base_url('web/product');
+        $config['base_url'] = base_url('web/product/all');
         $config['total_rows'] = $this->db->get('tbl_product')->num_rows();
         $config['per_page'] = 6;
         $config['num_links'] = 10;
@@ -34,14 +47,13 @@ class Web extends CI_Controller
 
         $data                    = array();
         $data['get_all_product'] = $this->web_model->get_all_product_pagi($config['per_page'], $this->uri->segment('3'));
-        $data['pagination'] = $this->pagination->create_links();
         
 		// $this->load->view('welcome_message');
 		$this->load->view('/template/header');
 		$this->load->view('/template/navbar');
 		$this->load->view('web/all',$data);
 		$this->load->view('/template/footer');
-	}
+    }
     
 	public function customer_login()
 	{

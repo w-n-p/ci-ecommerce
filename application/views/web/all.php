@@ -2,7 +2,7 @@
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="row gx-4 gx-lg-5 row-cols-5 justify-content-center">
                     
         <?php
         $arr_chunk_product = array_chunk($get_all_product, 4);
@@ -49,7 +49,6 @@
             <?php
         }
         ?>
-        <?php echo $pagination ?>
         <?php /*
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -231,5 +230,25 @@
 
                    */ ?>
                 </div>
+                <div class="row justify-content-center">
+    
+                </div>
+            <div class="content_pagi text-center">
+                <div class="pagination">
+                    <?=$this->pagination->create_links();?>
+                </div>
+                <div class="clear"></div>
+            </div>
             </div>
         </section>
+        
+<style>
+    .content_pagi{padding:20px;border: 1px solid #EBE8E8;border-radius: 3px;}
+    .pagination{}
+    .pagination ul{}
+    .pagination ul li{float: left}
+    .pagination ul li a{color: #000;padding: 7px 12px;border: 1px solid #ddd;font-size: 18px;}
+    .pagination ul li a:hover{background:#ddd;}
+    .pagiactive a{background:#ddd;}
+
+</style>
